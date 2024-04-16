@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font: 400 16px 'Josefin Sans', sans-serif;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%),hsl(0, 100%, 98%));
+  position: relative;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.hero {
+  width: max-content;
+  height: 100%;
+}
+.main {
+  background: url("./images/bg-pattern-desktop.svg") no-repeat;
+  background-size: cover;
+  padding: 5rem 8rem 10rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+}
+.logo {
+  width: 10rem;
+  margin-bottom: 1rem;
+}
+.main__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.title {
+  color: hsl(0, 36%, 70%);
+  font: 300 3rem 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  width: 20rem;
+}
+.title--bold {
+  font-weight: 600;
+  color:hsl(0, 6%, 24%);
+  display: block;
+}
+.desc {
+  font: 400 1rem 'Josefin Sans', sans-serif;
+  color: hsl(0, 36%, 70%);
+  width: 30rem;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  /* min-width: 30rem; */
+  position: relative;
+}
+.form__field {
+  height: 100%;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  border: 2px solid hsl(0, 36%, 70%);
+  background: none;
+  font: 400 1rem 'Josefin Sans', sans-serif;
+  outline: none;
+}
+.form__submit {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 5rem;
+  border-radius: 9999px;
+  border: none;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  cursor: pointer;
+  color:hsl(0, 6%, 24%);
+  box-shadow: 0 10px 40px -10px hsla(0, 93%, 68%, 70%);
+}
+::placeholder {
+  color: hsla(0, 36%, 70%, 60%);
+}
+.form__submit:hover {
+  background: hsl(0, 80%, 86%);
+}
+
+/* INVALID STYLE */
+.form--invalid {
+  position: relative;
+}
+.form--invalid .form__field {
+  border: 2px solid hsl(0, 93%, 68%);
+}
+.form--invalid::before {
+  content: "Please provide a valid email";
+  position: absolute;
+  left: 2rem;
+  bottom: -1.5rem;
+  font: 400 1rem 'Josefin Sans', sans-serif;
+  color: hsl(0, 93%, 68%);
+}
+.form--invalid .form__submit::before {
+  content: url("./images/icon-error.svg");
+  position: absolute;
+  z-index: 5;
+  left: -2.5rem;
+}
+
+@media (min-width: 700px) {
+  .hero--mobile {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .hero--desktop {
+    display: none;
+  }
+  body {
+    width: initial;
+    overflow: scroll;
+    position: relative;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .logo {
+    width: 6rem;
+    margin: 2rem 3rem;
+  }
+  .main {
+    padding: 0;
+    width: 100%;
+  }
+  .hero--mobile {
+    width: 100%;
+    height: max-content;
+    
+  }
+  .main__text {
+    margin: 2rem 3rem;
+    text-align: center;
+    width: initial;
+  }
+  .title {
+    width: initial;
+  }
+  .desc {
+    text-align: center;
+    width: initial;
+  }
+  .form {
+
+  }
+  .form__field {
+    width: 100%;
+  }
+}
